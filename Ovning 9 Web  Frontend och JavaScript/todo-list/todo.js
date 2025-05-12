@@ -10,7 +10,7 @@ addButton.addEventListener("click", () => {
         return;
     }
 
-    // إنشاء العناصر
+    // Create the elements
     const listItem = document.createElement("li");
     listItem.className = "list-group-item d-flex justify-content-between align-items-center";
 
@@ -25,12 +25,12 @@ addButton.addEventListener("click", () => {
     label.className = "form-check-label mb-0";
     label.textContent = taskText;
 
-    // شطب النص عند التحديد
+    // Decoration - line-through
     checkbox.addEventListener("change", () => {
         label.classList.toggle("text-decoration-line-through", checkbox.checked);
     });
 
-    // زر الحذف
+    // Delete button
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "🗑️";
     deleteBtn.className = "btn btn-sm btn-danger ms-2";
@@ -38,7 +38,7 @@ addButton.addEventListener("click", () => {
         listItem.remove();
     });
 
-    // تركيب العناصر
+   
     formCheck.appendChild(checkbox);
     formCheck.appendChild(label);
 
@@ -47,6 +47,6 @@ addButton.addEventListener("click", () => {
 
     taskList.appendChild(listItem);
 
-    // تفريغ الحقل
+    // Field empty
     inputField.value = "";
 });
